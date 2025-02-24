@@ -1,0 +1,224 @@
+.navbar {
+  background: linear-gradient(90deg, #2c3e50, #3498db);
+  padding: 1rem 0;
+  padding-bottom: 6px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  width: 100%; /* Ensure navbar doesn't overflow */
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.navbar-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+  width: 100%; /* Ensure container is full-width */
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: #ffffff;
+  font-size: 1.65rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  margin-left: 1rem;
+  white-space: nowrap; /* Prevent logo from wrapping */
+}
+
+.navbar-logo:hover {
+  color: #ecf0f1;
+}
+
+.menu-toggle img {
+  height: 34px;
+  width: 34px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.cart-icon {
+  color: #ffffff;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #e74c3c;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-left: 22px;
+  align-self: center;
+}
+
+.search-container input {
+  flex-grow: 1;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: .9rem;
+  outline: none;
+  background: #f5f6fa;
+}
+
+.search-container button {
+  padding: 0.5rem .9rem;
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #2c3e50;
+  transition: left 0.3s ease;
+  z-index: 1001;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.close-sidebar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.sidebar-menu {
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.sidebar-menu li {
+  margin: 1rem 0;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #ecf0f1;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    font-size: 1.2rem; /* Adjust logo size for mobile */
+    margin-left: 0.5rem; /* Less margin */
+  }
+
+  .menu-toggle img {
+    height: 28px; /* Adjust icon size */
+    width: 28px; /* Correct width value */
+  }
+
+  .search-container {
+    padding: 0.5rem 0.6rem; /* Adjust padding */
+    width: 100%; /* Allow full width */
+    max-width: 100%; /* Ensure it doesn't overflow */
+  }
+
+  .search-container input {
+    width: calc(100% - 80px); /* Adjust input width */
+  }
+
+  .search-container button {
+    padding: 0.5rem 1rem; /* Increase button padding */
+  }
+
+  .cart-icon {
+    font-size: 0.9rem; /* Adjust icon size */
+  }
+
+  .cart-count {
+    font-size: 0.7rem; /* Make the badge smaller */
+    padding: 0.2rem 0.4rem; /* Smaller padding */
+    top: -6px;
+    right: -6px;
+  }
+
+  .sidebar {
+    width: 220px; /* Reduce sidebar width */
+  }
+
+  .sidebar-menu li {
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+
+  .navbar-container {
+    padding: 0 1rem; /* Adjust container padding */
+    max-width: 100%; /* Ensure it fits the screen */
+  }
+}
